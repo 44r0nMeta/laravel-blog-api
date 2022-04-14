@@ -85,10 +85,7 @@ class ArticleController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'category_id' => $request->category,
-<<<<<<< HEAD
-=======
             'user_id' => null
->>>>>>> 4e9e0f3fc0c453efc22ef2b03333a0b2b07ba737
         ];
 
         if ($image) {

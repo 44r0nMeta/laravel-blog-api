@@ -22,7 +22,7 @@ class ArticleResource extends JsonResource
             'image' => $this->image,
             'created_at' => $this->created_at,
             'user_id' => $this->user_id,
-            'category' => new CategoryResource(Category::find($this->category_id))
+            'category_id' => $this->category_id
         ];
     }
 }
