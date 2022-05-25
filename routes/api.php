@@ -27,4 +27,12 @@ Route::group([
     Route::apiResource('comment', \App\Http\Controllers\V1\CommentController::class)->only(['store','index','destroy']);
     Route::get('comment/by-article/{article}', [\App\Http\Controllers\V1\CommentController::class, 'byArticle']);
     Route::get('article/by-category/{category}', [\App\Http\Controllers\V1\ArticleController::class, 'byCategory']);
+    Route::apiResource('user', \App\Http\Controllers\V1\Auth\UserController::class);
+});
+
+Route::group([
+    'prefix' => 'auth',
+], function (){
+    Route::post('login', [\App\Http\Controllers\V1\Auth\AuthController::class, 'index']);
+    Route::post('logout', [\App\Http\Controllers\V1\Auth\AuthController::class, 'destroy']);
 });
